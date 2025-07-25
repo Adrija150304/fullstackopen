@@ -12,26 +12,15 @@ const Statistics = ({ good, neutral, bad }) => {
   return (
     <div>
       <h2>Statistics</h2>
-      <table>
-        <tbody>
-          <StatisticLine text="Good" value={good} />
-          <StatisticLine text="Neutral" value={neutral} />
-          <StatisticLine text="Bad" value={bad} />
-          <StatisticLine text="All" value={total} />
-          <StatisticLine text="Average" value={average.toFixed(1)} />
-          <StatisticLine text="Positive" value={positive.toFixed(1) + ' %'} />
-        </tbody>
-      </table>
+      <p>Good: {good}</p>
+      <p>Neutral: {neutral}</p>
+      <p>Bad: {bad}</p>
+      <p>All: {total}</p>
+      <p>Average: {average.toFixed(1)}</p>
+      <p>Positive: {positive.toFixed(1)}%</p>
     </div>
   )
 }
-
-const StatisticLine = ({ text, value }) => (
-  <tr>
-    <td>{text}</td>
-    <td>{value}</td>
-  </tr>
-)
 
 const App = () => {
   const [good, setGood] = useState(0)
@@ -40,7 +29,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Give feedback</h1>
+      <h1>Give Feedback</h1>
       <button onClick={() => setGood(good + 1)}>Good</button>
       <button onClick={() => setNeutral(neutral + 1)}>Neutral</button>
       <button onClick={() => setBad(bad + 1)}>Bad</button>
