@@ -1,12 +1,14 @@
 // src/App.jsx
 import { useState } from 'react'
 
+// Button Component
 const Button = ({ handleClick, text }) => (
   <button onClick={handleClick}>
     {text}
   </button>
 )
 
+// StatisticLine Component
 const StatisticLine = ({ text, value }) => (
   <tr>
     <td>{text}</td>
@@ -14,6 +16,7 @@ const StatisticLine = ({ text, value }) => (
   </tr>
 )
 
+// Statistics Component
 const Statistics = ({ good, neutral, bad }) => {
   const total = good + neutral + bad
 
@@ -38,6 +41,7 @@ const Statistics = ({ good, neutral, bad }) => {
   )
 }
 
+// App Component
 const App = () => {
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
